@@ -13,56 +13,7 @@ import OrderButton from '../food_delivery/src/assets/images/Order2.svg';
 
 export default function App() {
   const Tab = createBottomTabNavigator();
-  const SearchTabIcon = () => (
-    <View style={[styles.searchIconWrapper]}>
-      <SearchButton width={30} height={30} />
-    </View>
-  );
-
-  const HomeTabIcon = () => (
-    <View style={styles.tabIconWrapper}>
-      <HomeButton width={30} height={30} />
-    </View>
-  );
-
-  const HomeTabIconFill = () => (
-    <View style={styles.tabIconWrapper}>
-      <HomeButtonFill width={30} height={30} />
-    </View>
-  );
-
-  const OrderTabIcon = () => (
-    <View style={styles.tabIconWrapper}>
-      <OrderButton width={30} height={30} />
-    </View>
-  );
-  const OrderTabIconFill = () => (
-    <View style={styles.tabIconWrapper}>
-      <OrderButtonFill width={30} height={30} />
-    </View>
-  );
-
-  return (
-    <NavigationContainer>
-      <SafeAreaView style={styles.MainView}>
-        <Tab.Navigator
-          screenOptions={{
-            headerShown: false,
-            tabBarActiveTintColor: '',
-            tabStyle: styles.tabItem,
-            tabBarStyle: styles.tabBar,
-          }}>
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              tabBarIcon: ({focused}) => {
-                return focused ? <HomeTabIconFill /> : <HomeTabIcon />;
-              },
-              tabBarLabel: 'Home',
-              tabBarLabelStyle: styles.tabBarLabel,
-            }}
-          />
+     />
           <Tab.Screen
             name="Search"
             component={Search}
