@@ -52,7 +52,37 @@ export default function App() {
             tabStyle: styles.tabItem,
             tabBarStyle: styles.tabBar,
           }}>
-          
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              tabBarIcon: ({focused}) => {
+                return focused ? <HomeTabIconFill /> : <HomeTabIcon />;
+              },
+              tabBarLabel: 'Home',
+              tabBarLabelStyle: styles.tabBarLabel,
+            }}
+          />
+          <Tab.Screen
+            name="Search"
+            component={Search}
+            options={{
+              tabBarIcon: () => <SearchTabIcon />,
+              tabBarLabel: '',
+            }}
+          />
+
+          <Tab.Screen
+            name="Order"
+            component={Order}
+            options={{
+              tabBarIcon: ({focused}) => {
+                return focused ? <OrderTabIconFill /> : <OrderTabIcon />;
+              },
+              tabBarLabel: 'Order',
+              tabBarLabelStyle: styles.tabBarLabel,
+            }}
+          />
         </Tab.Navigator>
       </SafeAreaView>
     </NavigationContainer>
