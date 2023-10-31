@@ -39,6 +39,93 @@ export default function Search() {
       review: '371',
     },
 
+    {
+      id: 2,
+      name: 'Angus fillet steak',
+      brand: 'Arizona Meat',
+      image: require('../../assets/images/featureimage2.jpg'),
+      quantity: '2 kg',
+      price: '23.99',
+      rating: '4.3',
+      review: '221',
+    },
+
+    {
+      id: 3,
+      name: 'Scotch filet steak',
+      brand: 'Arizona Meat',
+      image: require('../../assets/images/featureimage1.jpg'),
+      quantity: '5 kg',
+      price: '22.99',
+      rating: '4.2',
+      review: '111',
+    },
+    {
+      id: 4,
+      name: 'T-bone steak',
+      brand: 'Arizona Meat',
+      image: require('../../assets/images/featureimage3.jpg'),
+      quantity: '1 kg',
+      price: '45.99',
+      rating: '4.2',
+      review: '151',
+    },
+    {
+      id: 5,
+      name: 'Sirlon steak',
+      brand: 'Arizona Meat',
+      image: require('../../assets/images/featureimage3.jpg'),
+      quantity: '10 kg',
+      price: '32.99',
+      rating: '3.9',
+      review: '11',
+    },
+    {
+      id: 6,
+      name: 'Campari tomato',
+      brand: 'Arizona Meat',
+      image: require('../../assets/images/featureimage3.jpg'),
+      quantity: '4 kg',
+      price: '22.99',
+      rating: '3.2',
+      review: '91',
+    },
+  ]);
+  const renderList = () => {
+    const data = searchResults.length > 0 ? searchResults : list;
+    return data.map(item => (
+      <TouchableOpacity key={item.id} style={styles.foodContainer}>
+        <View style={styles.resultList}>
+          <Image style={styles.foodImage} source={item.image} />
+          <View style={styles.description}>
+            <Text style={styles.descriptionHeading}>{item.name}</Text>
+            <Text style={styles.weightPara}>
+              {item.quantity} {item.brand}
+            </Text>
+            <Text style={styles.ratePara}>${item.price}</Text>
+          </View>
+        </View>
+
+        <View style={styles.ratingContainer}>
+          <Star style={styles.starIcon} />
+          <Text style={styles.rating}>{item.rating}</Text>
+          <Text style={styles.review}>({item.review})</Text>
+        </View>
+      </TouchableOpacity>
+    ));
+  };
+
+  return (
+    <View style={styles.mainView}>
+      <View style={styles.topContainer}>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.inputText}
+            placeholder="Fresh Fillet Steak"
+            placeholderTextColor="#000"
+            value={searchQuery}
+            onChangeText={text => setSearchQuery(text)}
+          />
 
           <TouchableOpacity style={styles.closeBtn}>
             <CloseIcon width={30} height={30} />
