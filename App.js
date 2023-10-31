@@ -11,19 +11,6 @@ import HomeButtonFill from '../food_delivery/src/assets/images/Home2.svg';
 import OrderButtonFill from '../food_delivery/src/assets/images/Order.svg';
 import OrderButton from '../food_delivery/src/assets/images/Order2.svg';
 
-export default function App() {
-  const Tab = createBottomTabNavigator();
-  const SearchTabIcon = () => (
-    <View style={[styles.searchIconWrapper]}>
-      <SearchButton width={30} height={30} />
-    </View>
-  );
-
-  const HomeTabIcon = () => (
-    <View style={styles.tabIconWrapper}>
-      <HomeButton width={30} height={30} />
-    </View>
-  );
 
   const HomeTabIconFill = () => (
     <View style={styles.tabIconWrapper}>
