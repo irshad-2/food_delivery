@@ -11,7 +11,51 @@ import ShopIcon from '../../assets/images/Shop.svg';
 
 export default function Order() {
   const [activeOrder, setActiveOrder] = useState([
-
+    {
+      id: 1,
+      orderNumber: '185874',
+      date: 'from',
+      Orderedby: 'Amina Nguyen',
+      totalprice: '$512',
+      status: 'ACTIVE',
+      count: '7',
+    },
+  ]);
+  const finishedOrder = [
+    {
+      id: 1,
+      orderNumber: '185874',
+      date: 'from',
+      Orderedby: 'Amina Nguyen',
+      totalprice: '$512',
+      status: 'FINISHED',
+      count: '7',
+      content: [
+        {
+          id: 1,
+          image: require('../../assets/images/product5.jpg'),
+          title: 'Fresh Sirioin filet steak',
+          price: '$512',
+          quantity: '6 kg',
+          origin: 'Arizona Meat',
+        },
+        {
+          id: 2,
+          image: require('../../assets/images/product1.jpg'),
+          title: 'Button Mushrooms',
+          price: '$58',
+          quantity: '2 kg',
+          origin: 'Aguero Family Garden',
+        },
+        {
+          id: 3,
+          image: require('../../assets/images/featureimage3.jpg'),
+          title: 'Fresh Sirioin filet steak',
+          price: '$216',
+          quantity: '5 kg',
+          origin: 'Aguaro Family Garden',
+        },
+      ],
     },
     {
       id: 2,
